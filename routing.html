@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
+</head>
+<body ng-app="myApp">
+
+<p><a href="#/">Bollywood Hero</a></p>
+<a href="#/emraan">emraan</a>
+<a href="#/salman">salman</a>
+<a href="#/saif">saif</a>
+
+<p>Click on the links to see hero</p>
+
+<div ng-view style="background-color: lightblue; padding: 20px;"></div>
+
+<script>
+  var app = angular.module("myApp", ["ngRoute"]);
+
+  app.config(function($routeProvider) {
+    $routeProvider
+      .when("/", {
+        templateUrl: "Bollywood Hero.html"
+      })
+      .when("/emraan", {
+        templateUrl: "emraan.html"
+      })
+      .when("/salman", {
+        templateUrl: "salman.html"
+      })
+      .when("/saif", {
+        templateUrl: "saif.html"
+      });
+  });
+</script>
+
+</body>
+</html>
